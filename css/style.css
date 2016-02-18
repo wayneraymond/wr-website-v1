@@ -4,7 +4,7 @@
 
 	DEFINITIONS: 	wayneraymond.com Style Sheet
 	AUTHOR: 		Wayne Pretl
-	VERSION: 		22.09.2015
+	VERSION: 		18.02.2016
 
 	CONTENTS:
 
@@ -53,7 +53,7 @@ blockquote:before, blockquote:after, q:before, q:after { content: ''; content: n
 table               { border-collapse: collapse; border-spacing: 0;}
 
 /* Paul Irish Natural Box Model */
-* { Box-sizing: Border-box }
+* { Box-sizing: Border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
 
 /* 2 TYPOGRAPHY & CURSORS
 -------------------------------------------------------------- */
@@ -92,6 +92,11 @@ p.comment           { font-family: 'merriweatherlight_italic', 'Times New Roman'
 h2.yellow           { color:#ffc533; }
 
 .rule               { border-bottom: 1px solid #fff;}
+
+/* work project list styles */
+ul.rig li h3        { font-family: 'ralewayregular', Arial, sans-serif; color: #464e54; font-size: 1em; /* 16 */ line-height: 1.25em; /* 20/16 */ }
+ul.rig li p         { margin: 0 0 0.8125em; font-size: 0.8125em; /* 13/16 */ line-height: 1.125em; /* 18/16 */ }
+.category           { font-family: 'ralewayregular', Arial, sans-serif;}
 
 @font-face {
     font-family: 'ralewayregular';
@@ -267,6 +272,7 @@ hgroup 				{ clear:both; padding-top: 26px;}
 
 .contentSection     { width:100%; min-height: 440px; float:left; padding-top: 60px; }
 .contentSubSection  { width:100%; min-height: 220px; float:left; padding-top: 60px; }
+.contentFullWidth   { width: 90%; max-width: 1024px; margin: 0 auto; }
 .twoColumns         { width:700px; margin:0 auto; clear:both; overflow: auto; }
 .col                { width: 340px; margin-bottom: 60px;}
 .colNoMB            { width: 340px; margin-bottom: 0;}
@@ -310,16 +316,19 @@ hgroup 				{ clear:both; padding-top: 26px;}
 
 /* work list */
 .workHero          { background: url("../img/work-extended.jpg") center no-repeat; }
-.projectListImg     { text-align: center; margin-bottom: 20px; }
-.magnify            { width: 100%; height: 360px; position: relative; overflow: hidden; background-color: #637280; }
-.magnify img        { width: 100%; height: 100%; line-height: 0; transition: all 0.5s ease; opacity: 0.1; }
-.magnify img:hover  { transform: scale(1.1); opacity: 1; transition: all 0.5s ease-out; }
-.magnify .projectCaption { z-index: 10; position: absolute; top: 90%; left: 50%; width:100%; }
-.magnify .projectCaption { margin-top: -50%; margin-left: -50%; }
-.projectCaption h2,
-.projectCaption h3  { opacity: 0.8; margin:0; color: #fff;}
-.projectCaption h2:hover,
-.projectCaption h3:hover  { opacity: 1; }
+
+/* work list grid v2 */
+ul.rig              { list-style: none; font-size: 0px; margin-left: -2.5%; /* should match li left margin */ }
+ul.rig li           { display: inline-block; padding: 10px; margin: 0 0 2.5% 2.5%; background: #fff; border: 1px solid #ddd; font-size: 16px; font-size: 1rem; vertical-align: top; }
+ul.rig li img       { max-width: 100%; height: auto; margin: 0 0 10px; }
+
+/* class for 2 columns */
+ul.rig.columns-2 li { width: 47.5%; /* this value + 2.5 should = 50% */ }
+/* class for 3 columns */
+ul.rig.columns-3 li { width: 30.83%; /* this value + 2.5 should = 33% */}
+/* class for 4 columns */
+ul.rig.columns-4 li { width: 22.5%; /* this value + 2.5 should = 25% */}
+ 
 
 /* scroll to top */
 .cd-container       { width: 90%; max-width: 940px; margin: 2em auto; }
@@ -389,6 +398,12 @@ hgroup 				{ clear:both; padding-top: 26px;}
     .halfImgCanvas    { width: 100%; min-height: 0; margin-bottom: 20px; }
     .quarterImgCanvas { width: 40%; min-height: 0; margin: 0 0 20px 20px; }
 
+    /* work list grid v2 */
+    ul.grid-nav li  { display: block; margin: 0 0 5px; }
+    ul.grid-nav li a { display: block; }
+    ul.rig          { margin-left: 0; }
+    ul.rig li       { width: 100% !important; /* over-ride all li styles */ margin: 0 0 20px; }
+
     /* realignment */
     .addPadB        { padding-bottom: 60px; }
     .addPadT        { padding-top: 60px; }
@@ -421,6 +436,13 @@ hgroup 				{ clear:both; padding-top: 26px;}
     .quarterImgCanvas { width: 21%; min-height: 0; margin: 0 0 20px 20px; }
 
     .cd-top         { right: 20px; bottom: 20px; }
+
+    /* work list grid v2 */
+    ul.grid-nav li  { display: block; }
+    ul.grid-nav li a { display: block; }
+    ul.rig          { margin-left: 0; }
+    ul.rig li       { width: 47.5% !important; /* over-ride all li styles */}
+
     }
 
 
